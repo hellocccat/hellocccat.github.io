@@ -1,1 +1,1 @@
-{"name":"hellocccat","number_of_posts_per_page":7,"disqus_shortname":"","posts":[{"title":"Test","date":"2018-08-02","tags":"test","path":"test.html"}],"pages":[]}
+{"name":"hellocccat","number_of_posts_per_page":7,"disqus_shortname":"","posts":[{"title":"  NginX 反代系列教程（重写）","date":"2018-08-02","tags":"nginx","path":"nginx-proxy-pass.html"},{"title":"Test","date":"2018-08-02","tags":"test","path":"test.html","num":0,"type":"post","active":true}],"pages":[]}

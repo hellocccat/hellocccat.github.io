@@ -28,23 +28,50 @@
 <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
 <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
 <script >hljs.initHighlightingOnLoad();</script>  
-<body>
-        <div ng-include="'template/header.html'"></div>
-        <div>
-            <pre>
-                <code class="lang-javascript">
-        function init(){
-            $scope.req.getArticle();
-            $('pre code').each(function(i, block) {
-                hljs.highlightBlock(block);
-            });
+<pre><code class="nginx">
+server{
+listen 80;
+server_name example.com www.example.com;    
+#绑定的域名
+
+index index.php;      
+#默认首页
+
+access_log off;		
+#off 关闭日志
+
+location / {
+proxy_cache_key "$scheme://$host$request_uri";
+#缓存key规则，用于自动清除缓存。
+
+proxy_cache cache_one; 
+#缓存区名称，与前面定义的相同
+
+proxy_cache_valid  200 304 3h;
+proxy_cache_valid 301 3d;
+proxy_cache_valid any 10s;
+#200 304状态缓存3小时
+301状态缓存3天
+其他状态缓存（如502 404）10秒
+
+proxy_set_header   X-Real-IP  $remote_addr;
+proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+#向后端传递访客ip
+
+proxy_set_header   Referer http://example.com;	
+#强制定义Referer，程序验证判断会用到
+
+proxy_set_header   Host $host;
+#定义主机头
+
+proxy_pass http://1.2.3.4;	
+#指定后端ip，可以加端口
+
+#proxy_cache_use_stale invalid_header error timeout http_502;
+#当后端出现错误、超时、502状态时启用过期缓存，慎用。
         }
-                </code>
-            </pre>
-        </div>
-        <div class="content" ui-view></div>
-        <footer>cloud blog by@ermu </footer>
-    </body>
+}
+</pre>
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
@@ -55,22 +82,50 @@
 
 <script>hljs.initHighlightingOnLoad();</script>  
 
-<p>
-        </p><div ng-include="'template/header.html'"></div>
-        <div>
-            <pre>                <code class="lang-javascript">
-        function init(){
-            $scope.req.getArticle();
-            $('pre code').each(function(i, block) {
-                hljs.highlightBlock(block);
-            });
+<pre><code class="nginx">
+server{
+listen 80;
+server_name example.com www.example.com;    
+#绑定的域名
+
+index index.php;      
+#默认首页
+
+access_log off;        
+#off 关闭日志
+
+location / {
+proxy_cache_key "$scheme://$host$request_uri";
+#缓存key规则，用于自动清除缓存。
+
+proxy_cache cache_one; 
+#缓存区名称，与前面定义的相同
+
+proxy_cache_valid  200 304 3h;
+proxy_cache_valid 301 3d;
+proxy_cache_valid any 10s;
+#200 304状态缓存3小时
+301状态缓存3天
+其他状态缓存（如502 404）10秒
+
+proxy_set_header   X-Real-IP  $remote_addr;
+proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+#向后端传递访客ip
+
+proxy_set_header   Referer http://example.com;    
+#强制定义Referer，程序验证判断会用到
+
+proxy_set_header   Host $host;
+#定义主机头
+
+proxy_pass http://1.2.3.4;    
+#指定后端ip，可以加端口
+
+#proxy_cache_use_stale invalid_header error timeout http_502;
+#当后端出现错误、超时、502状态时启用过期缓存，慎用。
         }
-                </code>
-            </pre>
-        </div>
-        <div class="content" ui-view=""></div>
-        <footer>cloud blog by@ermu </footer>
-    <p></p>
+}
+</code></pre>
 <!-- content end -->
 </div>
 <br>

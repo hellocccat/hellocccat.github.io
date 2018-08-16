@@ -25,16 +25,52 @@
 	</div>
 <div id="md" style="display: none;">
 <!-- markdown -->
-test<p>
-scknjchac
-咔咔咔咔咔咔扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩咔咔咔咔咔咔扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩咔咔咔咔咔咔扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩咔咔咔咔咔咔扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩咔咔咔咔咔咔扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩咔咔咔咔咔咔扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩少时诵诗书所所所所所所所所所所所所所所所所所所所所所所所所所所
+<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+<script >hljs.initHighlightingOnLoad();</script>  
+<body>
+        <div ng-include="'template/header.html'"></div>
+        <div>
+            <pre>
+                <code class="lang-javascript">
+        function init(){
+            $scope.req.getArticle();
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        }
+                </code>
+            </pre>
+        </div>
+        <div class="content" ui-view></div>
+        <footer>cloud blog by@ermu </footer>
+    </body>
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
 <!-- content -->
-<p>test</p><p>
-scknjchac
-咔咔咔咔咔咔扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩咔咔咔咔咔咔扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩咔咔咔咔咔咔扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩咔咔咔咔咔咔扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩咔咔咔咔咔咔扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩咔咔咔咔咔咔扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩扩少时诵诗书所所所所所所所所所所所所所所所所所所所所所所所所所所</p>
+<p><link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  </p>
+
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+
+<script>hljs.initHighlightingOnLoad();</script>  
+
+<p>
+        </p><div ng-include="'template/header.html'"></div>
+        <div>
+            <pre>                <code class="lang-javascript">
+        function init(){
+            $scope.req.getArticle();
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        }
+                </code>
+            </pre>
+        </div>
+        <div class="content" ui-view=""></div>
+        <footer>cloud blog by@ermu </footer>
+    <p></p>
 <!-- content end -->
 </div>
 <br>

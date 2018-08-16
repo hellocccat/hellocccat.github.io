@@ -26,11 +26,6 @@
 <div id="md" style="display: none;">
 <!-- markdown -->
 
-<link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/default.css">
-
-<script src="https://highlightjs.org/static/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
 <pre><code class="shell">
 #开启转发
 echo 1 > /proc/sys/net/ipv4/ip_forward  
@@ -48,12 +43,6 @@ iptables -t nat -A POSTROUTING -d 目标ip -p tcp --dport 21 -j SNAT --to 本机
 </div>
 <div class="entry" id="main">
 <!-- content -->
-<p><link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/default.css"></p>
-
-<script src="https://highlightjs.org/static/highlight.pack.js"></script>
-
-<script>hljs.initHighlightingOnLoad();</script>
-
 <pre><code class="shell">
 #开启转发
 echo 1 &gt; /proc/sys/net/ipv4/ip_forward  
